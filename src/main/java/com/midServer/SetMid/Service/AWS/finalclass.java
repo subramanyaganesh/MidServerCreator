@@ -19,7 +19,7 @@ import static com.midServer.SetMid.Service.InstanceService.setValuesToCommand;
 public class finalclass {
     public static void main(String[] args) throws Exception {
         String AWS_ACCESS_KEY = "";
-        String AWS_SECRET_KEY = "IH3ctRqdQyffMZXnbom/xAS+6mxZ9t/uoGrNb5nk";
+        String AWS_SECRET_KEY = "";
         String regionName = "us-west-2";
         String keyName = "keyName";
         String instanceName = "discoinstance";
