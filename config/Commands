@@ -1,0 +1,9 @@
+ls
+if test -d $HOME/##FileName##; then cd ##FileName##/agent && sh stop.sh && rm -rf $HOME/##FileName## && echo "removing ##FileName## and stopping process"; else echo "creating new mid";fi
+mkdir ##FileName##
+cd ##FileName## && wget https://install.service-now.com/glide/distribution/builds/package/mid/##date##/mid.##VeRsIon##.linux.x86-64.zip && unzip mid.##VeRsIon##.linux.x86-64.zip
+cd ##FileName##/agent && sed 's/YOUR_INSTANCE/##Instance##/1' config.xml > changedconfig.xml && mv changedconfig.xml config.xml
+cd ##FileName##/agent && sed 's/##Instance##_USER_NAME_HERE/@@Username@@/' config.xml > changedconfig.xml && mv changedconfig.xml config.xml
+cd ##FileName##/agent && sed 's/##Instance##_PASSWORD_HERE/$$Password$$/' config.xml > changedconfig.xml && mv changedconfig.xml config.xml
+cd ##FileName##/agent && sed 's/YOUR_MIDSERVER_NAME_GOES_HERE/$$midserver$$/' config.xml > changedconfig.xml && mv changedconfig.xml config.xml
+cd ##FileName##/agent && sh start.sh && echo $(pid=$!)
